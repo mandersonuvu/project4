@@ -1,0 +1,256 @@
+/*
+ * fixed a padding issue for .intro_content
+ * fixed a padding issue for .guide_video
+ * fixed a margin issue with the content pages
+ */
+
+:root {
+  --red: #FF5A5F;
+  --blue: #4B88A2;
+  --green: #60993E;
+  --offwhite: #F2E3BC;
+  --yellow: #F4B860;
+}
+
+@font-face {
+  font-family: "Iosevka Etoile";
+  src: url(Iosevka-Etoile-01.ttf);
+}
+
+* {
+  font-family: "Iosevka Etoile", serif;
+  margin: 0;
+  padding: 0;
+}
+
+#intro,
+#guide,
+#paper_types {
+  display: none;
+}
+
+#main_link,
+#intro_link,
+#guides_link,
+#paper_link {
+  cursor: pointer;
+}
+
+h1,
+h2 {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+.content_section h1 {
+  margin-top: 1.5em;
+  font-size: 2em;
+  text-decoration: underline;
+}
+
+#paper_types h2 {
+  text-decoration: underline;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--offwhite);
+}
+
+header {
+  background-color: var(--green);
+  display: flex;
+  align-items: center;
+  padding-left: 3em;
+}
+
+header nav {
+  margin-left: auto;
+  margin-right: 3em;
+}
+
+header nav a {
+  margin: 15px;
+  font-size: 1.2em;
+  text-decoration: underline;
+}
+
+#theme_button {
+  position: relative;
+  display: block;
+  width: 76px;
+  height: 76px;
+  align-self: stretch;
+  background: transparent;
+  border: none;
+}
+
+#theme_button:after {
+  position: absolute;
+  bottom: 0;
+  height: 0;
+  width: 0;
+  right: 0;
+  border: 38px solid transparent;
+  border-top-color: black;
+  border-right-color: black;
+  content: "";
+}
+
+.logo {
+  width: 4em;
+  margin-bottom: 0.5em;
+}
+
+main {
+  flex: 1;
+}
+
+.banner {
+  background-color: var(--blue);
+  text-align: center;
+  padding-bottom: 1em;
+}
+
+.banner h1 {
+  font-size: 2em;
+  margin: 0;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+search input {
+  width: 50%;
+  max-width: 1000px;
+  border-radius: 20px;
+  height: 2em;
+  padding: 1em;
+  font-size: 1.2em;
+}
+
+.content_section {
+  margin: 0 auto;
+  max-width: 1200px;
+  min-width: 1000px;
+}
+
+.origrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 45px;
+}
+
+.origrid div {
+  aspect-ratio: 1;
+}
+
+figure {
+  margin: 0;
+}
+
+figure img {
+  width: 100%;
+}
+
+.content_section>* {
+  margin-left: 2em;
+  margin-right: 2em;
+}
+
+article.content_section img {
+  width: 200px;
+}
+
+article img,
+figure img {
+  border: 2px solid green;
+}
+
+figcaption {
+  text-align: center;
+}
+
+#intro * {
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+.intro_content {
+  display: grid;
+  grid: auto / 5fr 1fr;
+  align-items: center;
+}
+
+.intro_content p {
+  padding-right: 2em;
+}
+
+.guide_video {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  padding-top: 3em;
+}
+
+.paper_type {
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  align-items: center;
+}
+
+.paper_type p {
+  margin-left: 2em;
+}
+
+footer {
+  text-align: center;
+  margin-top: 4em;
+  margin-bottom: 3em;
+}
+
+@media screen and (max-width: 1000px) {
+  search input {
+    width: 90%;
+  }
+
+  .content_section {
+    min-width: auto;
+  }
+
+  .origrid {
+    width: 90%;
+    display: inline-grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 25px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  header nav {
+    display: flex;
+    flex-direction: column;
+  }
+
+  header nav a {
+    margin: 0.3em;
+  }
+
+  .origrid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 25px;
+  }
+
+  .intro_content {
+    grid: auto / auto;
+    grid-gap: 1em;
+    justify-items: center;
+  }
+
+  .paper_type {
+    display: flex;
+    flex-direction: column;
+  }
+}
